@@ -13,9 +13,9 @@ def get_words(filename):
 def list_count(word_list):
     big_list = []
     for word in word_list:
-        for baby_list in big_list:
-            if word == baby_list[0]:
-                baby_list[1] += 1
+        for sub_list in big_list:
+            if word == sub_list[0]:
+                sub_list[1] += 1
                 # stop iterating if you come across word
                 break
         # If we dont come across word, add word

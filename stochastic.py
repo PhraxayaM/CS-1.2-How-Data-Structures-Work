@@ -17,12 +17,7 @@ def get_words(filename):
     return all_words_list
 
 
-
-
-
-
-
-
+# finds a random word
 def random_word(histogram):
 
     random_num = random.uniform(0, 8)
@@ -33,6 +28,7 @@ def random_word(histogram):
         num += count
         if num > random_num:
             return word
+
 def count_words(words_list):
         """Count occurences in the given list of words and
         return that data structure"""

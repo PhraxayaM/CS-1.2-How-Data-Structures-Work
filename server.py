@@ -14,8 +14,9 @@ def hello_world():
     words = []
     for _ in range(0, 8):
         words.append(random_word(histograms))
-    print(words)
-    return str(words)
+        output = ' '.join(words)
+        outputString = output
+    return str(outputString)
 
 
 #
