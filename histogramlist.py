@@ -10,6 +10,8 @@ def get_words(filename):
 
 
 
+
+
 def list_count(word_list):
     list_of_list = []
     for word in word_list:
