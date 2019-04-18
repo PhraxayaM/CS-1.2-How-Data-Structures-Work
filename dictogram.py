@@ -12,18 +12,35 @@ class Dictogram(dict):
         # Add properties to track useful word counts for this histogram
         self.types = 0  # Count of distinct word types in this histogram
         self.tokens = 0  # Total count of all word tokens in this histogram
+
+
         # Count words in given list, if any
+
         if word_list is not None:
             for word in word_list:
                 self.add_count(word)
 
+
     def add_count(self, word, count=1):
         """Increase frequency count of given word by given count amount."""
         # TODO: Increase word frequency by count
+        """Count occurences in the given list of words and
+        return that data structure"""
+
+        if word in self:
+            # increase its count by one
+            self[word] += count
+        else:
+            #set its count to one
+            self[word] = count
 
     def frequency(self, word):
         """Return frequency count of given word, or 0 if word is not found."""
         # TODO: Retrieve word frequency count
+        if word not in self:
+            return 0
+        else:
+            return self[word]
 
 
 def print_histogram(word_list):

@@ -11,9 +11,9 @@ def get_words(filename):
 
 
 def list_count(word_list):
-    big_list = []
+    list_of_list = []
     for word in word_list:
-        for sub_list in big_list:
+        for sub_list in list_of_list:
             if word == sub_list[0]:
                 sub_list[1] += 1
                 # stop iterating if you come across word
@@ -21,10 +21,10 @@ def list_count(word_list):
         # If we dont come across word, add word
         else:
             list_to_append = [word, 1]
-            big_list.append(list_to_append)
-    return big_list
+            list_of_list.append(list_to_append)
+    return list_of_list
 
 
-# word_list = get_words('LifeAndHabit.txt')
-# counts = list_count(word_list)
-# print(counts)
+word_list = get_words('LifeAndHabit.txt')
+counts = list_count(word_list)
+print(counts)
