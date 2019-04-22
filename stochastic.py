@@ -20,9 +20,8 @@ def get_words(filename):
 # finds a random word
 def random_word(histogram):
 
-    random_num = random.uniform(0, dict_length)
+    random_num = random.uniform(0, len(word_list))
     num = 0
-    dict_length = get_words('Life.txt').count
 
     for word in histogram:
         count = histogram[word]

@@ -9,9 +9,6 @@ def get_words(filename):
 
 
 
-
-
-
 def list_count(word_list):
     list_of_list = []
     for word in word_list:
@@ -29,4 +26,4 @@ def list_count(word_list):
 
 word_list = get_words('LifeAndHabit.txt')
 counts = list_count(word_list)
-print(counts)
+# print(counts)
