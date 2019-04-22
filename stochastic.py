@@ -48,7 +48,7 @@ if __name__ == '__main__':
 
     """
     this is just an example Alan showed me on how spliting puts a string into a dictionary
-    
+
     fish_list = 'one fish two fish red fish blue fish'.split()
     fish_histogram = count_words(fish_list)
      histogram = {'one':1, 'fish':1, 'blue':1, 'two':1, 'three':2, 'four':2}
@@ -59,4 +59,6 @@ if __name__ == '__main__':
     words = []
     for _ in range(0, 8):
         words.append(random_word(histograms))
+
+        
     print(words)
