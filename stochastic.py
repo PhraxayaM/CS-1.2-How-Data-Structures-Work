@@ -22,10 +22,12 @@ def random_word(histogram):
 
     random_num = random.uniform(0, len(word_list))
     num = 0
+    random_list = []
 
     for word in histogram:
         count = histogram[word]
         num += count
+
         if num > random_num:
             return word
 
@@ -43,6 +45,17 @@ def count_words(words_list):
                 words_counts[word] = 1
         return words_counts
 
+def check_words(histogram):
+    word_check = {}
+    for _ in range(10000):
+        word = random_word(histogram)
+        if word in word_check:
+            word_check[word] += 1
+        else:
+            word_check[word] = 1
+
+    return word_check
+
 
 if __name__ == '__main__':
 
@@ -56,9 +69,9 @@ if __name__ == '__main__':
      """
     word_list = get_words('Life.txt')
     histograms = count_words(word_list)
+    test_freq = check_words(histograms)
     words = []
     for _ in range(0, 8):
         words.append(random_word(histograms))
-
-        
     print(words)
+    print(test_freq)

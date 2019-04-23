@@ -26,4 +26,4 @@ def list_count(word_list):
 
 word_list = get_words('LifeAndHabit.txt')
 counts = list_count(word_list)
-print(counts)
+# print(counts)
