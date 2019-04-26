@@ -68,6 +68,6 @@ def count_words(words_list):
 # histograma(histogram)
 # histogramaTuple(histogram)
 
-words_list = get_words('LifeAndHabit.txt')
-counts = count_words(histogram)
-print(counts)
+words_list = get_words('fish.txt')
+counts = count_words(words_list)
+# print(counts)
