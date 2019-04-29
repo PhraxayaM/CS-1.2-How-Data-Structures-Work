@@ -14,35 +14,29 @@ def get_words(filename):
                 all_words_list.append(word)
     return all_words_list
 
-
 def markov_chain(words_list):
         """Count occurences in the given list of words and
         return that data structure"""
-        mc = Dictogram()
-
-        for index in range(0, len(words_list)-1):
-            word_index = word_list[index]
-            if word_index in mc:
-                mc[word_index].add_count(word_index)
-            # Check if we saw this word before
-            # next_word_index = index_tracker + 1
-            # next_word = words_list[next_word_index]
-
-            # if word in words_counts:
-            #     words_counts
-            #     # increase its count by one
-            #     words_counts[word] += 1
+        # create new dictionary
+        markov = {}
+        # iterate over the corpus
+        for i in range(len(words_list)-1):
+        # create two variables for current word and current word + 1 (next)
+            current_word = words_list[i]
+            next_word = words_list[i+1]
+            # check if word is key in dictionary
+            if current_word in markov:
+            # if key is in big dictionary, update Dictogram
+                markov[current_word].add_count(next_word)
+            # if word is not a key in dictionary, create key with value as dictogram
             else:
-                #set its count to one
-                # words_counts[word] = 1
-                new_mc = Dictogram()
-                new_mc.add_count(word_index)
-                mc[word_index] = new_mc
-        return mc
-
-
+            # Dictogram key will be next with a value of 1
+                markov[current_word] = Dictogram([next_word])
+            # return dictionary
+        return markov
 
 if __name__ == '__main__':
-    word_list = get_words('Life.txt')
+    # word_list = get_words('Life.txt')
+    word_list = ["one", "fish", "two", "fish", "red", "fish", "blue", "fish"]
     histograms = markov_chain(word_list)
-    # print(histograms)
+    print(histograms)
