@@ -126,6 +126,8 @@ class HashTable(object):
         """Insert or update the given key with its associated value.
         TODO: Running time: O(l) Why and under what conditions?"""
 
+
+
         bucket_index = self._bucket_index(key) # 0(1)
         bucket = self.buckets[bucket_index] # 0(1)
         item = bucket.find(lambda value: value[0] == key)
