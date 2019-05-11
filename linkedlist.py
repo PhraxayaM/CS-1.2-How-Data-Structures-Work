@@ -54,7 +54,9 @@ class LinkedList(object):
 
     def length(self):
         """Return the length of this linked list by traversing its nodes.
-        TODO: Running time: O(???) Why and under what conditions?"""
+        TODO: Running time: O(n) Why and under what conditions?
+we have to loop through all the nodes and increment the count one by one
+        """
         # TODO: Loop through all nodes and count one for each
         length_counter = 0
         current = self.head
@@ -66,7 +68,11 @@ class LinkedList(object):
 
     def append(self, item):
         """Insert the given item at the tail of this linked list.
-        TODO: Running time: O(???) Why and under what conditions?"""
+        TODO: Running time: O(1) Why and under what conditions?
+
+        it's constant because we know exactly where the tail is and can append exactly where we want.
+
+        """
         # TODO: Create new node to hold given item
         # TODO: Append node after tail, if it exists
         # tail_node = self.tail
@@ -84,7 +90,9 @@ class LinkedList(object):
 
     def prepend(self, item):
         """Insert the given item at the head of this linked list.
-        TODO: Running time: O(???) Why and under what conditions?"""
+        TODO: Running time: O(1) Why and under what conditions?
+        we know exactly where the head is
+        """
         # TODO: Create new node to hold given item
         # TODO: Prepend node before head, if it exists
         new_node = Node(item)
@@ -132,8 +140,11 @@ class LinkedList(object):
 
     def delete(self, item):
         """Delete the given item from this linked list, or raise ValueError.
-        TODO: Best case running time: O(???) Why and under what conditions?
-        TODO: Worst case running time: O(???) Why and under what conditions?"""
+        TODO: Best case running time: O(1) Why and under what conditions?
+        It would have to be the first node and then we don't have to go through the rest of the nodes in the linked list
+        TODO: Worst case running time: O(N) Why and under what conditions?
+        This is if the item we are looking for is at the end and we have to go through all the nodes
+        """
 
 
 

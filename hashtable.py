@@ -26,7 +26,10 @@ class HashTable(object):
 
     def keys(self):
         """Return a list of all keys in this hash table.
-        TODO: Running time: O(???) Why and under what conditions?"""
+        TODO: Running time: O(N) Why and under what conditions?
+        We have to go through all the buckets and then go through all the linked list.
+        """
+
         # Collect all keys in each bucket
         all_keys = []
         for bucket in self.buckets:
@@ -36,7 +39,9 @@ class HashTable(object):
 
     def values(self):
         """Return a list of all values in this hash table.
-        TODO: Running time: O(???) Why and under what conditions?"""
+        TODO: Running time: O(N) Why and under what conditions?
+        We have to go through all the buckets and then go through all the linked list.
+        """
         all_values = []
         # TODO: Loop through all buckets
         for bucket in self.buckets:
@@ -47,7 +52,9 @@ class HashTable(object):
 
     def items(self):
         """Return a list of all items (key-value pairs) in this hash table.
-        TODO: Running time: O(???) Why and under what conditions?"""
+        TODO: Running time: O(N) Why and under what conditions?
+        We have to go through all the buckets and then go through all the linked list.
+        """
         # Collect all pairs of key-value entries in each bucket
         all_items = []
         for bucket in self.buckets: # b iterations => 0(b*l) = 0(n) overall
@@ -73,7 +80,7 @@ class HashTable(object):
 
     def contains(self, key):
         """Return True if this hash table contains the given key, or False.
-        TODO: Running time: O(???) Why and under what conditions?"""
+        TODO: Running time: O(L) Why and under what conditions?"""
         # TODO: Find bucket where given key belongs
 
         #1) call bucket_index() in order to find the correct buckets
@@ -91,20 +98,9 @@ class HashTable(object):
         else:
             return False
 
-#           return item is not None: # check if entry was foound
-        # for current_key in bucket.items():
-        #     if current_key == key:
-        #         return True
-        # return False
-
-        # look how to look up index in order to get a value in python
-        # list i'm looking through is self.buckets
-        # TODO: Check if key-value entry exists in bucket
-
-
     def get(self, key):
         """Return the value associated with the given key, or raise KeyError.
-        TODO: Running time: O(???) Why and under what conditions?"""
+        TODO: Running time: O(L) Why and under what conditions? We know which specific bucket to go to but we still have to traverse through all the linked list"""
         # TODO: Find bucket where given key belongs
 
         ## bucket_index is created so that we know where our index is
@@ -124,7 +120,9 @@ class HashTable(object):
 
     def set(self, key, value):
         """Insert or update the given key with its associated value.
-        TODO: Running time: O(l) Why and under what conditions?"""
+        TODO: Running time: O(l) Why and under what conditions? Our item variable uses the lambda method to
+        find the specific bucket but we still need to traverse through the linked list_to_append
+        """
 
 
 
@@ -149,7 +147,8 @@ class HashTable(object):
 
     def delete(self, key):
         """Delete the given key from this hash table, or raise KeyError.
-        TODO: Running time: O(???) Why and under what conditions?"""
+        TODO: Running time: O(l) because ? We know the specific bucket but we still have to go through each linked list to Find
+        the matching key"""
         bucket_index = self._bucket_index(key) #
         bucket = self.buckets[bucket_index]
         item = bucket.find(lambda key_value: key_value[0] == key)
