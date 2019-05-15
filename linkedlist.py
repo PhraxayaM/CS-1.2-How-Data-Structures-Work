@@ -139,49 +139,41 @@ we have to loop through all the nodes and increment the count one by one
         return None # 0(1)
 
     def delete(self, item):
-        """Delete the given item from this linked list, or raise ValueError.
-        TODO: Best case running time: O(1) Why and under what conditions?
-        It would have to be the first node and then we don't have to go through the rest of the nodes in the linked list
-        TODO: Worst case running time: O(N) Why and under what conditions?
-        This is if the item we are looking for is at the end and we have to go through all the nodes
-        """
-
-
+        found = False
+        node = Node(item)
 
         previous_node = None
-        # TODO: Loop through all nodes to find one whose data matches given item
         current_node = self.head
+
+        # Make sure linked list is not empty
         while current_node is not None:
-            if current_node.data == item:
-                if current_node == self.head and current_node == self.tail:
-                    self.head = None
-                    self.tail = None
-                elif current_node == self.head:
-                    self.head = current_node.next
-                    current_node.next = None
-                elif current_node == self.tail:
-                    self.tail = previous_node
-                    previous_node.next = None
-                else:
+            #Search for matching parameters
+            if current_node.data == node.data:
+                found = True
+                current_node.prev = previous_node
+                #check to make sure previous node is not empty
+                if previous_node is not None:
+                    # If previous node isn't None, then set the pointer for the previous_node to be equal to current_nodes pointer
                     previous_node.next = current_node.next
-                    current_node.next = None
-                return
-            else:
-                previous_node = current_node
-                current_node = current_node.next
-        raise ValueError('Item not found: {}'.format(item))
-
-
-        # TODO: Update previous node to skip around node with matching data
-
-
-        # TODO: Otherwise raise error to tell user that delete has failed
-
-
-        # Hint: raise ValueError('Item not found: {}'.format(item))
+                else:
+                    #If previous node is equal to None, set the head equal to our current_node's pointer
+                    self.head = current_node.next
+                    # if our current_node is pointing to None, set the tail equal to our previous_node
+                if current_node.next == None:
+                    self.tail = previous_node
+            previous_node = current_node
+            current_node = current_node.next
+        if not found:
+            raise ValueError('Item not found: {}'.format(item))
 
 
 
+"""Delete the given item from this linked list, or raise ValueError.
+TODO: Best case running time: O(1) Why and under what conditions?
+It would have to be the first node and then we don't have to go through the rest of the nodes in the linked list
+TODO: Worst case running time: O(N) Why and under what conditions?
+This is if the item we are looking for is at the end and we have to go through all the nodes
+"""
 
 def test_linked_list():
     ll = LinkedList()

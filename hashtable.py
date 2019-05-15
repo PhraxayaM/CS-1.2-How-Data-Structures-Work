@@ -80,7 +80,7 @@ class HashTable(object):
 
     def contains(self, key):
         """Return True if this hash table contains the given key, or False.
-        TODO: Running time: O(L) Why and under what conditions?"""
+        TODO: Running time: O(L) Why and under what conditions? We already know the specific bucket but we still have to go through the linked list"""
         # TODO: Find bucket where given key belongs
 
         #1) call bucket_index() in order to find the correct buckets
