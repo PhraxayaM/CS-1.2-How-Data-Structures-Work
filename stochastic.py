@@ -45,7 +45,7 @@ def count_words(words_list):
                 words_counts[word] = 1
         return words_counts
 
-def check_words(histogram):
+def sampling(histogram):
     word_check = {}
     for _ in range(10000):
         word = random_word(histogram)
@@ -69,7 +69,7 @@ if __name__ == '__main__':
      """
     word_list = get_words('Life.txt')
     histograms = count_words(word_list)
-    test_freq = check_words(histograms)
+    test_freq = sampling(histograms)
     words = []
     for _ in range(0, 8):
         words.append(random_word(histograms))
