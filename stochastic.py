@@ -45,7 +45,7 @@ def count_words(words_list):
                 words_counts[word] = 1
         return words_counts
 
-def sampling(histogram):
+def sampling_frequency(histogram):
     word_check = {}
     for _ in range(10000):
         word = random_word(histogram)
@@ -56,6 +56,23 @@ def sampling(histogram):
 
     return word_check
 
+def sample_markov(histogram):
+    # Variable that sets the limit of the words frequency
+    frequency_limit = 0
+    # Unwrap the values inside the histogram by using .items(), we check for the key and values after unwrapping
+    for key, value in histogram.items()
+    # if our value "(key:value)" is higher than our frequency limit
+        if value > frequency_limit
+            #set our frequency limit to be the same as our value
+            frequency = value
+
+    random_num = random.uniform(0, len(word_list))
+
+    while True:
+        #choose a random index to check
+        rand_index = random.randint(0, len(histogram) - 1)
+        histogram_list = list(histogram)
+        
 
 if __name__ == '__main__':
 
@@ -69,7 +86,7 @@ if __name__ == '__main__':
      """
     word_list = get_words('Life.txt')
     histograms = count_words(word_list)
-    test_freq = sampling(histograms)
+    test_freq = sampling_frequency(histograms)
     words = []
     for _ in range(0, 8):
         words.append(random_word(histograms))
