@@ -22,8 +22,9 @@ def markov_chain(words_list):
         # iterate over the corpus
         for index in range(len(words_list)-2):
         # create two variables for current word and current word + 1 (next)
-            print(words_list)
+            # print(words_list)
             current_word = (words_list[index], words_list[index+1])
+            print(current_word)
             next_word = words_list[index+2]
             # check if word is key in dictionary
             if current_word in markov:
