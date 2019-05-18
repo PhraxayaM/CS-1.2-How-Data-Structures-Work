@@ -60,9 +60,9 @@ def sample_markov(histogram):
     # Variable that sets the limit of the words frequency
     frequency_limit = 0
     # Unwrap the values inside the histogram by using .items(), we check for the key and values after unwrapping
-    for key, value in histogram.items()
+    for key, value in histogram.items():
     # if our value "(key:value)" is higher than our frequency limit
-        if value > frequency_limit
+        if value > frequency_limit:
             #set our frequency limit to be the same as our value
             frequency = value
 
@@ -72,7 +72,11 @@ def sample_markov(histogram):
         #choose a random index to check
         rand_index = random.randint(0, len(histogram) - 1)
         histogram_list = list(histogram)
-        
+        chosen_word = histogram_list[rand_index]
+
+        if histogram[chosen_word] >= random_num:
+            return chosen_word
+
 
 if __name__ == '__main__':
 
