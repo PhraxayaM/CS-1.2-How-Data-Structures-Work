@@ -9,8 +9,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    word_list = get_words('Life.txt')
-    histograms = count_words(word_list)
+    words_list = get_words('corpus.txt')
+    histograms = count_words(words_list)
     words = []
     for _ in range(0, 8):
         words.append(random_word(histograms))
@@ -18,7 +18,7 @@ def hello_world():
         outputString = output
     return str(outputString)
 
-
+print(hello_world())
 #
 # @app.route('/')
 # def hello_world():

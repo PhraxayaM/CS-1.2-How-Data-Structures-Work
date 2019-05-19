@@ -20,7 +20,7 @@ def get_words(filename):
 # finds a random word
 def random_word(histogram):
 
-    random_num = random.uniform(0, len(word_list))
+    random_num = random.uniform(0, len(histogram))
     num = 0
     random_list = []
 
