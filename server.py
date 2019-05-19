@@ -3,6 +3,8 @@ from flask import Flask
 from stochastic import get_words
 from stochastic import count_words
 from stochastic import random_word
+import higher_order_markov_chain
+import random
 
 
 app = Flask(__name__)
@@ -10,13 +12,18 @@ app = Flask(__name__)
 @app.route('/')
 def hello_world():
     words_list = get_words('corpus.txt')
-    histograms = count_words(words_list)
-    words = []
-    for _ in range(0, 8):
-        words.append(random_word(histograms))
-        output = ' '.join(words)
-        outputString = output
-    return str(outputString)
+    chain = markov_chain(word_list)
+    list_from_chain = list(chain)
+    random_words = random.choice(list_from_chain)
+    sentence = make_sentence(chain, random_words, 10)
+    return HTML.format(sentence)
+    # histograms = count_words(words_list)
+    # words = []
+    # for _ in range(0, 8):
+    #     words.append(random_word(histograms))
+    #     output = ' '.join(words)
+    #     outputString = output
+    # return str(outputString)
 
 # print(hello_world())
 #
