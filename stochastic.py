@@ -78,7 +78,7 @@ def sample_markov(histogram):
             return chosen_word
 
 
-if __name__ == '__main__':
+# if __name__ == '__main__':
 
     """
     this is just an example Alan showed me on how spliting puts a string into a dictionary

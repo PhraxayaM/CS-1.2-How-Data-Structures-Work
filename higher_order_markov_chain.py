@@ -14,7 +14,6 @@ def markov_chain(words_list):
         # create two variables for current word and current word + 1 (next)
             # print(words_list)
             current_word = (words_list[index], words_list[index+1])
-            print(current_word)
             next_word = words_list[index+2]
             # check if word is key in dictionary
             if current_word in markov:
@@ -58,6 +57,6 @@ if __name__ == '__main__':
     chain = markov_chain(word_list)
     list_from_chain = list(chain)
     random_words = random.choice(list_from_chain)
-    # # print(random_words)
+    # print(random_words)
     sentence = make_sentence(chain, random_words, 5)
     print(sentence)

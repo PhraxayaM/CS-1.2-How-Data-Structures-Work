@@ -12,12 +12,12 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    words_list = get_words('corpus.txt')
+    word_list = get_words('corpus.txt')
     chain = markov_chain(word_list)
     list_from_chain = list(chain)
     random_words = random.choice(list_from_chain)
     sentence = make_sentence(chain, random_words, 10)
-    return str(sentence)
+    return HTML.format(sentence)
     # histograms = count_words(words_list)
     # words = []
     # for _ in range(0, 8):
