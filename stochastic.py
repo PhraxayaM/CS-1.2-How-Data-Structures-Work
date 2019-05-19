@@ -96,4 +96,4 @@ if __name__ == '__main__':
     for _ in range(0, 8):
         words.append(random_word(histograms))
     # print(words)
-    print(test_markov)
+    # print(test_markov)
