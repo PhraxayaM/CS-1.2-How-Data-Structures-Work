@@ -88,12 +88,12 @@ if __name__ == '__main__':
      histogram = {'one':1, 'fish':1, 'blue':1, 'two':1, 'three':2, 'four':2}
 
      """
-    words_list = get_words('Life.txt')
-    histograms = count_words(words_list)
-    test_freq = sampling_frequency(histograms)
-    test_markov = sample_markov(histograms)
-    words = []
-    for _ in range(0, 8):
-        words.append(random_word(histograms))
+    # words_list = get_words('Life.txt')
+    # histograms = count_words(words_list)
+    # test_freq = sampling_frequency(histograms)
+    # test_markov = sample_markov(histograms)
+    # words = []
+    # for _ in range(0, 8):
+    #     words.append(random_word(histograms))
     # print(words)
     # print(test_markov)

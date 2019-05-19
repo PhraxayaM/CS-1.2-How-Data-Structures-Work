@@ -1,20 +1,8 @@
 from histogram import count_words
+from histogram import get_words
 from dictogram import Dictogram
 import random
 import stochastic
-
-def get_words(filename):
-    """Open the file
-    and return a list of all words in it."""
-    all_words_list = []
-    with open(filename) as file:
-        # go through one line at a time
-        for line in file:
-            #no arguement gets rid of all white spaces
-            words_list = line.split()
-            for word in words_list:
-                all_words_list.append(word)
-    return all_words_list
 
 def markov_chain(words_list):
         """Count occurences in the given list of words and
@@ -66,14 +54,10 @@ def make_sentence(chain, starting_words, sentence_len):
     return sentence
 
 if __name__ == '__main__':
-    # word_list = get_words('Life.txt')
-    # word_list = ["one", "fish", "two", "fish", "red", "fish", "blue", "fish"]
-    # histograms = markov_chain(word_list)
-    # print(histograms)
-    word_list = get_words('corpus.txt')
+    word_list = get_words('life.txt')
     chain = markov_chain(word_list)
     list_from_chain = list(chain)
     random_words = random.choice(list_from_chain)
-    # print(random_words)
+    # # print(random_words)
     sentence = make_sentence(chain, random_words, 5)
     print(sentence)

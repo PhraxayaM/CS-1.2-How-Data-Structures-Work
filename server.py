@@ -3,7 +3,8 @@ from flask import Flask
 from stochastic import get_words
 from stochastic import count_words
 from stochastic import random_word
-import higher_order_markov_chain
+from histogram import get_words
+from higher_order_markov_chain import markov_chain
 import random
 
 
@@ -16,7 +17,7 @@ def hello_world():
     list_from_chain = list(chain)
     random_words = random.choice(list_from_chain)
     sentence = make_sentence(chain, random_words, 10)
-    return HTML.format(sentence)
+    return str(sentence)
     # histograms = count_words(words_list)
     # words = []
     # for _ in range(0, 8):
