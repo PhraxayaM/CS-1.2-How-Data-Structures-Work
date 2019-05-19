@@ -18,7 +18,7 @@ def hello_world():
     list_from_chain = list(chain)
     random_words = random.choice(list_from_chain)
     sentence = make_sentence(chain, random_words, 10)
-    return HTML.format(sentence)
+    return str(sentence)
     # histograms = count_words(words_list)
     # words = []
     # for _ in range(0, 8):
