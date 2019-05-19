@@ -5,6 +5,7 @@ from stochastic import count_words
 from stochastic import random_word
 from histogram import get_words
 from higher_order_markov_chain import markov_chain
+from higher_order_markov_chain import make_sentence
 import random
 
 
