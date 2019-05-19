@@ -8,17 +8,15 @@ from stochastic import random_word
 app = Flask(__name__)
 
 @app.route('/')
-
-print("hi")
-# def hello_world():
-#     word_list = get_words('Life.txt')
-#     histograms = count_words(word_list)
-#     words = []
-#     for _ in range(0, 8):
-#         words.append(random_word(histograms))
-#         output = ' '.join(words)
-#         outputString = output
-#     return str(outputString)
+def hello_world():
+    word_list = get_words('Life.txt')
+    histograms = count_words(word_list)
+    words = []
+    for _ in range(0, 8):
+        words.append(random_word(histograms))
+        output = ' '.join(words)
+        outputString = output
+    return str(outputString)
 
 
 #
