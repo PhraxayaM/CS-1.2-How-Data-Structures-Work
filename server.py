@@ -18,7 +18,7 @@ def hello_world():
         outputString = output
     return str(outputString)
 
-print(hello_world())
+# print(hello_world())
 #
 # @app.route('/')
 # def hello_world():
